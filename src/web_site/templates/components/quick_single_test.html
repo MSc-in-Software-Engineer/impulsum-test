@@ -1,0 +1,29 @@
+<div class="col-md-6">
+    <div class="h-100 p-5 bg-light border rounded-3">
+        <h2>{{ algorithm_title }}</h2>
+        <p>{{ algorithm_desc }}</p>
+
+        <form id="{{ algorithm_form_id }}">
+            <div class="row">
+                <input type="hidden" value="{{ algorithm_form_id }}" name="algorithmId">
+                <div class="col-5">
+                    <input type="number" class="form-control" placeholder="X Number" name="xNum"
+                           required>
+                </div>
+                <div class="col-2 text-center">
+                    <img src="{{ url_for('static', filename='img/logo.png') }}">
+                </div>
+                <div class="col-5">
+                    <input type="number" class="form-control" placeholder="Y Number" name="yNum"
+                           required>
+                </div>
+                <div class="col-12">
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-dark" type="submit">Calculate</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div id="{{ algorithm_result_id }}" class="mt-2"></div>
+    </div>
+</div>

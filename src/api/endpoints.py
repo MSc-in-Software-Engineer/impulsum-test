@@ -17,12 +17,12 @@ def home_api():
     return jsonify({'status': False, 'message': 'Method Not Allowed! ... [GET] only REQUEST ACCEPTABLE!'}), 405
 
 
-@app.route(f'{API_PREFIX}/impulsum', methods=['POST'])
-def impulsum():
+@app.route(f'{API_PREFIX}/impulsum/<int:bulk>/', methods=['POST'])
+def impulsum(bulk: int):
     impulsum_controller = ImpulsumController()
 
     if request.method == 'POST':
         body = request.get_json()
-        return impulsum_controller.post(body=body)
+        return impulsum_controller.post(body=body, bulk=bulk)
 
     return jsonify({'status': False, 'message': 'Method Not Allowed! ... [POST] only REQUEST ACCEPTABLE!'}), 405

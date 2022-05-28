@@ -1,12 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content_body %}
-    {% for algorihtm in algortims %}
-        {% with algorithm_title=algorihtm.algorithm_title,
+    <h1 class="text-center">Quick Single Test</h1>
+    <hr/>
+    <div class="row mt-3 mb-3">
+        {% for algorihtm in algortims %}
+            {% with algorithm_title=algorihtm.algorithm_title,
                 algorithm_desc=algorihtm.algorithm_desc,
                 algorithm_form_id=algorihtm.algorithm_form_id,
                 algorithm_result_id=algorihtm.algorithm_result_id %}
-            {% include 'components/algorithm_row.html' %}
-        {% endwith %}
-    {% endfor %}
+                {% include 'components/quick_single_test.html' %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+    <h1 class="text-center">Quick Bulk Test</h1>
+    <hr/>
+    <div class="row mt-3 mb-5">
+        {% include 'components/quick_bulk_test.html' %}
+    </div>
 {% endblock %}

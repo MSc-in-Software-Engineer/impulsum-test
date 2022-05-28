@@ -1,0 +1,48 @@
+<div class="col-md-12">
+    <div class="h-100 p-5 bg-light border rounded-3">
+        <form id="bulk_test_form">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h2>Different Input Sets</h2>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary btn-sm" id="randomBulkInputNumber">Random Inputs</button>
+                </div>
+            </div>
+            <p>Enter the numbers in the inputs given below. Afterwards, the report created with two algorithms will
+                return
+                to you.</p>
+            {% for n in range(1, 5) %}
+                <div class="row p-1">
+                    <div class="col-2">
+                        {{ n }}. Inputs
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control form-control-sm" type="number"
+                               placeholder="X Number"
+                               name="{{ n }}_number_input_x">
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control form-control-sm" type="number"
+                               placeholder="Y Number"
+                               name="{{ n }}_number_input_y">
+                    </div>
+                </div>
+            {% endfor %}
+            <hr class="mt-3"/>
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-dark btn-sm" type="submit">Calculate</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="h-100 p-5 bg-light border rounded-3 mt-4">
+        <div id="quickBulkTestResults"></div>
+    </div>
+</div>
