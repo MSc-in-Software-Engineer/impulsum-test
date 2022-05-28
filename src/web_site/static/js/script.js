@@ -113,7 +113,7 @@ const quickBulkTestFormHandling = (elementId) => {
                 quickBulkTestResultsReportCreate(data.results.algorithms);
             }
         });
-        // this.reset();
+        this.reset();
     });
 }
 
